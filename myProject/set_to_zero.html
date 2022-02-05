@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Set to Zero</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<h2>Selectors and Set to Zero</h2>
+<div>
+    <h3>Комбинация селекторов</h3>
+    <h4>Сначала тэг, потом класс без пробелов:</h4>
+    <p>Стилизовать все теги span с классом bigFont</p>
+    <p>span.bigFont{<br>
+        color: darkgreen;<br>
+        }<br></p>
+    <p>
+    <h4>Вложеность:</h4>
+    <p>
+        Только tag внутри class поменял стиль: <br>
+    <p>
+        .smallFont span { <br>
+        font-size: 15px;<br>
+        background: orange;<br>
+        }<br>
+        Если при этом есть стиль просто span, то он дополнит эту вложенность (будь он выше или ниже) <br>
+    </p>
+    </p>
+    <h4>Обращение к вложенному элементу первого уровня</h4>
+    .firstLvl>p{<br>
+    background: dimgray;<br>
+    }<br>
+    </p>
+
+    <div>
+        <p class="smallFont">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias animi consequuntur eaque,
+            eligendi esse ex facilis id incidunt iure iusto, nam neque
+            <span>possimus quam qui quia </span>quos repellendus, vel voluptatum! A consequatur, cumque ea
+            exercitationem explicabo fuga labore libero nemo omnis, possimus quibusdam quis veniam.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad autem blanditiis corporis eaque error id minus
+            non
+            obcaecati sint voluptatum. Et facere libero optio porro?</p>
+        <p>Lorem ipsum dolor sit amet, <span class="bigFont">consectetur adipisicing</span> elit. Aliquid exercitationem
+            ipsum porro praesentium quibusdam sed!</p>
+        <p>Lorem ipsum <span class="bigFont">dolor sit amet</span>, consectetur adipisicing elit. Nobis.</p>
+        <p class="bigFont">Lorem ipsum dolor sit amet.</p>
+    </div>
+    <div class="firstLvl">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque hic odit tenetur!</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+        <div>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam, provident!</p>
+        </div>
+    </div>
+</div>
+<div>
+    <p>Обнуление стилей</p>
+    <p>* {<br>
+        padding: 0;<br>
+        margin: 0;<br>
+        border: 0;<br>
+        }<br></p>
+    <p>/*меняет подсчет ширины блока так, чтобы еам быдл удобно верстать*/<br>
+        *, *:before, *:after {<br>
+        -moz-box-sizing: border-box;<br>
+        -webkit-box-sizing: border-box;<br>
+        box-sizing: border-box;<br>
+        }<br></p>
+    <p>/*Убираем линии обводки у некоторых браузеров*/<br>
+        :focus, :active{outline: none;}<br>
+        a:focus, a:active{outline: none;}<br></p>
+
+    <p>/*Делаем блочными нужные теги*/<br>
+        nav,footer,header,aside{display: block;}<br></p>
+
+    <p>/*Обнуляем поведение шрифтов*/<br>
+        html, body{<br>
+        height: 100%;<br>
+        width: 100%;<br>
+        font-size: 100%;<br>
+        line-height: 100%;<br>
+        font-size: 14px;<br>
+        -ms-text-size-adjust: 100%;<br>
+        -moz-text-size-adjust: 100%;<br>
+        -webkit-text-size-adjust: 100%;<br>
+        }<br></p>
+    <p>input,button,textarea{font-family: inherit;}<br></p>
+
+    <p>input::-ms-clear{display: none;}<br>
+        button{cursor: pointer;}<br>
+        button::-moz-focus-inner{padding: 0;border: 0;}<br>
+        a, a:visited{text-decoration: none;}<br>
+        a:hover{text-decoration: none;}<br>
+        ul li{list-style: none;}<br>
+        img{vertical-align: top;}<br></p>
+
+    <p>/*Обнуляем заголовки*/<br>
+        h1,h2,h3,h4,h5,h6{font-size: inherit; font-weight: 400;}<br></p>
+</div>
+
+
+</body>
+</html>
